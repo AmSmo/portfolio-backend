@@ -13,5 +13,29 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    # field :users, resolver: Queries::Users
+    field :users, [Types::UserType], null: false,
+      description: "Returns Users"
+    def users
+      User.all
+    end
+    
+    field :languages, [Types::LanguageType], null: false,
+      description: "Returns All Languages"
+    def languages
+      Language.all
+    end
+
+
+    field :credits, [Types::CreditType], null: false,
+      description: "Returns All Credits"
+    def credits
+      Credit.all
+    end
+  
+  
   end
+
+
 end
