@@ -11,7 +11,8 @@ module Mutations
             user = User.find_by(username: options[:username])
             if user 
                 if user.authenticate(options[:password])
-                    {user: user, token: "1234"}
+                    token =JWT.encode({user_id: user.id}, ENV["JWT_TOKEN"])
+                    {user: user, token: token}
                 else
                     {errors: [{field: "password", message: "check, no such match found"}]}
                 end

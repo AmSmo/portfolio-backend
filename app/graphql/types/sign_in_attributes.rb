@@ -3,7 +3,6 @@ module Types
         description "Attributes for signing in"
         argument :username, String, "Username", required: true
         argument :password, String, "Password", required: true
-    
     end
 
 end
