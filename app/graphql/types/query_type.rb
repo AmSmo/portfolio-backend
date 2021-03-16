@@ -37,5 +37,4 @@ module Types
   
   end
 
-
 end
